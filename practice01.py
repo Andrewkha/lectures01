@@ -25,3 +25,13 @@ import turtle
 # turtle.forward(50)
 # turtle.left(90)
 
+# circle
+
+def circle(n = 100):
+    turtle.shape("turtle")
+    for step in range(0, n):
+        turtle.forward(5)
+        turtle.left(360 / n)
+
+
+circle(200)
