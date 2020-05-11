@@ -29,8 +29,15 @@ def square(side):
 def circle(radius, n=100):
     turtle.shape("turtle")
     for step in range(0, n):
-        turtle.forward(2 * pi * radius / n)
         turtle.left(360 / n)
+        turtle.forward(2 * pi * radius / n)
+
+
+def opposite_circle(radius, n=100):
+    turtle.shape("turtle")
+    for step in range(0, n):
+        turtle.right(360 / n)
+        turtle.forward(2 * pi * radius / n)
 
 
 def mult_squares(step, side):
@@ -92,4 +99,14 @@ def mult_cornerers(count, radius):
         radius += 10
 
 
-mult_cornerers(10, 15)
+def flower():
+    circle(50, 50)
+    opposite_circle(50, 50)
+    turtle.left(60)
+    circle(50, 50)
+    opposite_circle(50, 50)
+    turtle.left(60)
+    circle(50, 50)
+    opposite_circle(50, 50)
+
+flower()
