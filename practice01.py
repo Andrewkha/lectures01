@@ -109,4 +109,11 @@ def flower():
     circle(50, 50)
     opposite_circle(50, 50)
 
-flower()
+
+def butterfly():
+    for radius in range(10, 100, 10):
+        circle(radius, 50)
+        opposite_circle(radius, 50)
+
+
+butterfly()
