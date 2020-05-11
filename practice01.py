@@ -116,4 +116,10 @@ def butterfly():
         opposite_circle(radius, 50)
 
 
-butterfly()
+def star(n):
+    for _ in range(0, n):
+        turtle.forward(100)
+        turtle.left(180 - (180 / n))
+
+
+star(11)
