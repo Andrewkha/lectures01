@@ -1,5 +1,5 @@
 import turtle
-from math import pi
+from math import pi, sin, radians
 
 # S letter
 #
@@ -55,4 +55,41 @@ def spider(n):
         turtle.stamp()
 
 
-spider(10)
+def square_spiral():
+    side = 5
+    turtle.shape("turtle")
+    for _ in range(0, 100):
+        turtle.forward(side)
+        turtle.left(90)
+        side += 5
+
+
+def get_radius(side, n):
+    return side / (2 * sin(360 / (2 * n)))
+
+
+def get_side(radius, n):
+    return radius * 2 * sin(radians(360 / (2 * n)))
+
+
+def n_cornerer(n, side):
+    turtle.shape("turtle")
+    corner = 180 * (n - 2) / n
+    turtle.left(180 - corner / 2)
+    for _ in range(0, n):
+        turtle.forward(side)
+        turtle.left(360 / n)
+
+
+def mult_cornerers(count, radius):
+    for n in range(3, count + 1):
+        side = get_side(radius, n)
+        turtle.penup()
+        turtle.goto(radius, 0)
+        turtle.right(turtle.heading())
+        turtle.pendown()
+        n_cornerer(n, side)
+        radius += 10
+
+
+mult_cornerers(10, 15)
