@@ -1,4 +1,5 @@
 import turtle
+from math import pi
 
 # S letter
 #
@@ -27,11 +28,11 @@ import turtle
 
 # circle
 
-def circle(n = 100):
+
+def circle(radius, n=100):
     turtle.shape("turtle")
     for step in range(0, n):
-        turtle.forward(5)
+        turtle.forward(2 * pi * radius / n)
         turtle.left(360 / n)
 
 
-circle(200)
