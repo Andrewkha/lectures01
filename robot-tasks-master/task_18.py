@@ -6,7 +6,9 @@ from pyrob.api import *
 @task
 def task_8_28():
     found = False
-    while not wall_is_on_the_left():
+    if not wall_is_above():
+        found = True
+    while not wall_is_on_the_left() and not found:
         move_left()
         if not wall_is_above():
             found = True

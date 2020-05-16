@@ -15,7 +15,7 @@ def task_7_5():
         for move in range(step):
             if not wall_is_on_the_right():
                 move_right()
-                if move == step - 1:
+                if move == step - 1 and not wall_is_on_the_right():
                     fill_cell()
         step += 1
 
